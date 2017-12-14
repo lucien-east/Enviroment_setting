@@ -1,0 +1,18 @@
+[Scenario]
+While executing
+    mkinitcpio -p linux
+, encounter the error.
+
+[Error Message]
+"==> ERROR: Failed to load preset: `/etc/mkinitcpio.d/linux.preset'"
+
+[Reason]
+Maybe it is because of cusomized kernel
+
+[Solution]
+Check what the kernel preset you are using
+    ls /etc/mkinitcpio.d/
+
+Repeat the command with absolute path
+    sudo mkinitcpio -p /etc/mkinitcpio.d/linux49.preset
+    sudo update-grub
